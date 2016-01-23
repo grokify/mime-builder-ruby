@@ -55,4 +55,11 @@ class MIMEBuilderFileTest < Test::Unit::TestCase
     assert_equal 'attachment; filename="test_file.pdf"', filepart.mime.headers.get('Content-Disposition')
   end
 
+  def test_nonexistent_file
+    filepath = './test/test_file_nonexistent.pdf'
+
+    assert_raise do
+      filepart = MIMEBuilder::Filepath.new(filepath)
+    end
+  end
 end
