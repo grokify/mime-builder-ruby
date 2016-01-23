@@ -15,6 +15,23 @@ MIMEBuilder Ruby
 
 This library creates `mime` parts from limited information.
 
+## Installation
+
+### Via Bundler
+
+Add 'mime_builder' to Gemfile and then run `bundle`:
+
+```sh
+$ echo "gem 'mime_builder'" >> Gemfile
+$ bundle
+```
+
+### Via RubyGems
+
+```sh
+$ gem install mime_builder
+```
+
 ## Usage
 
 ### From Filepath
