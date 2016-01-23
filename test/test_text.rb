@@ -14,7 +14,6 @@ class MIMEBuilderTextTest < Test::Unit::TestCase
     assert_equal 'text/plain', filepart.mime.headers.get('Content-Type')
 
     assert_equal test_text, filepart.mime.body.to_s
-
   end
 
 end

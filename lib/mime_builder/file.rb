@@ -1,3 +1,4 @@
+require 'base64'
 require 'mime'
 require 'mime/types'
 
@@ -20,7 +21,7 @@ module MIMEBuilder
         'Content-Type',
         get_file_content_type(filepath, opts[:content_type]))
 
-      set_attachment_content_disposition(opts[:is_attachment])
+      set_attachment_content_disposition(filepath, opts[:is_attachment])
     end
 
     def create_mime(filepath, content_id_disable)
@@ -45,7 +46,8 @@ module MIMEBuilder
         fail "File \"#{filepath}\" does not exist or cannot be read"
       end
 
-      File.open(filepath, 'rb:BINARY') { |f| f.read }
+      #File.open(filepath, 'rb:BINARY') { |f| f.read }
+      File.read(filepath)
     end
 
     def get_file_content_type(filepath = nil, content_type = nil)
@@ -56,7 +58,7 @@ module MIMEBuilder
         || 'application/octet-stream'
     end
 
-    def set_attachment_content_disposition(is_attachment)
+    def set_attachment_content_disposition(filepath, is_attachment)
       @mime.headers.set(
         'Content-Disposition',
         get_attachment_content_disposition(filepath)
