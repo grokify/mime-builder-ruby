@@ -18,8 +18,7 @@ module MIMEBuilder
 
       @mime.headers.set(
         'Content-Type',
-        get_file_content_type(filepath, opts[:content_type])
-      )
+        get_file_content_type(filepath, opts[:content_type]))
 
       set_attachment_content_disposition(opts[:is_attachment])
     end
