@@ -21,6 +21,7 @@ This library creates `mime` parts from limited information.
 
 ```ruby
 builder = MIMEBuilder::Filepath('/path/to/file')
+mime_part = builder.mime
 ```
 
 Options:
@@ -41,6 +42,7 @@ builder = MIMEBuilder::Filepath(
 
 ```ruby
 builder = MIMEBuilder::Filepath('Hi there!')
+mime_part = builder.mime
 ```
 
 Options:
