@@ -19,6 +19,16 @@ This library creates `mime` parts from limited information.
 
 ### From Filepath
 
+Builds a `MIME::Application` or `MIME::Type` object depending on whether base64 encoding is selected. This reads bytes from filesystem and populates the following headers:
+
+1. `Content-Disposition`
+2. `Content-Transfer-Encoding`
+3. `Content-Type`
+
+This will optionally delete the following auto-generated header:
+
+1. `Content-Id`
+
 ```ruby
 builder = MIMEBuilder::Filepath('/path/to/file')
 mime_part = builder.mime
@@ -39,6 +49,12 @@ builder = MIMEBuilder::Filepath(
 ```
 
 ### From String
+
+Builds a `MIME::Text` object.
+
+This will optionally delete the following auto-generated header:
+
+1. `Content-Id`
 
 ```ruby
 builder = MIMEBuilder::Filepath('Hi there!')
