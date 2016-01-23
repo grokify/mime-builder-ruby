@@ -9,7 +9,7 @@ module MIMEBuilder
     # {:base64_encode bool, :content_type string, :content_id_disable bool}
     def initialize(filepath, opts={})
 
-      if opts.has_key?(:base64_encode) && opts[:base64_encode]
+      if opts.key?(:base64_encode) && opts[:base64_encode]
         @base64_encode = true
       else
         @base64_encode = false
@@ -17,7 +17,7 @@ module MIMEBuilder
 
       @mime = create_mime(filepath)
 
-      if opts.has_key?(:content_id_disable)
+      if opts.key?(:content_id_disable)
         @mime.headers.delete('Content-Id')
       end
 
@@ -26,7 +26,7 @@ module MIMEBuilder
         get_file_content_type(filepath, opts[:content_type])
       )
 
-      if opts.has_key?(:is_attachment) && opts[:is_attachment]
+      if opts.key?(:is_attachment) && opts[:is_attachment]
         @mime.headers.set(
           'Content-Disposition',
           get_attachment_content_disposition(filepath)
@@ -51,16 +51,13 @@ module MIMEBuilder
         raise "File \"#{filepath.to_s}\" does not exist or cannot be read"
       end
 
-      # Ruby 1.8.7 support
-      file_bytes = RUBY_VERSION < '1.9' \
-        ? File.open(filepath, 'rb')        { |f| f.read } \
-        : File.open(filepath, 'rb:BINARY') { |f| f.read }
+      file_bytes = File.open(filepath, 'rb:BINARY') { |f| f.read }
 
       return file_bytes
     end
 
     def get_file_content_type(filepath=nil, content_type=nil)
-      if (content_type.is_a?(String) && content_type =~ /^[^\/\s]+\/[^\/\s]+/)
+      if content_type.is_a?(String) && content_type =~ %r{^[^/\s]+/[^/\s]+}
         return content_type
       end
       return MIME::Types.type_for(filepath).first.content_type \
@@ -71,9 +68,8 @@ module MIMEBuilder
       filename = File.basename(filepath.to_s)
       if filename.is_a?(String) && filename.length > 0
         return "attachment; filename=\"#{filename}\""
-      else
-        return 'attachment'
       end
+      return 'attachment'
     end
 
   end

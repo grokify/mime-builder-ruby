@@ -75,7 +75,7 @@ MIMEBuilder &copy; 2016 by John Wang
  [downloads-svg]: http://ruby-gem-downloads-badge.herokuapp.com/mime_builder
  [downloads-link]: https://rubygems.org/gems/mime_builder
  [build-status-svg]: https://api.travis-ci.org/grokify/mime-builder-ruby.svg?branch=master
- [build-status-link]: https://travis-ci.org/grokify/ime-builder-ruby
+ [build-status-link]: https://travis-ci.org/grokify/mime-builder-ruby
  [coverage-status-svg]: https://coveralls.io/repos/grokify/mime-builder-ruby/badge.svg?branch=master
  [coverage-status-link]: https://coveralls.io/r/grokify/mime-builder-ruby?branch=master
  [dependency-status-svg]: https://gemnasium.com/grokify/mime-builder-ruby.svg
