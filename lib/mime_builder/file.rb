@@ -16,8 +16,10 @@ module MIMEBuilder
 
       @mime = create_mime(filepath, opts[:content_id_disable])
 
-      @mime.headers.set('Content-Type',
-        get_file_content_type(filepath, opts[:content_type]))
+      @mime.headers.set(
+        'Content-Type',
+        get_file_content_type(filepath, opts[:content_type])
+      )
 
       set_attachment_content_disposition(opts[:is_attachment])
     end
@@ -51,14 +53,15 @@ module MIMEBuilder
       if content_type.is_a?(String) && content_type =~ %r{^[^/\s]+/[^/\s]+}
         return content_type
       end
-      return MIME::Types.type_for(filepath).first.content_type \
+      MIME::Types.type_for(filepath).first.content_type \
         || 'application/octet-stream'
     end
 
     def set_attachment_content_disposition(is_attachment)
-      @mime.headers.set('Content-Disposition', \
-        get_attachment_content_disposition(filepath)) \
-        if is_attachment
+      @mime.headers.set(
+        'Content-Disposition',
+        get_attachment_content_disposition(filepath)
+      ) if is_attachment
     end
 
     def get_attachment_content_disposition(filepath = nil)
