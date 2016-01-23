@@ -36,7 +36,7 @@ module MIMEBuilder
 
       mime.headers.delete('Content-Id') if content_id_disable
 
-      return mime
+      mime
     end
 
     def read_file_bytes(filepath = nil)
@@ -44,7 +44,7 @@ module MIMEBuilder
         fail "File \"#{filepath}\" does not exist or cannot be read"
       end
 
-      return File.open(filepath, 'rb:BINARY') { |f| f.read }
+      File.open(filepath, 'rb:BINARY') { |f| f.read }
     end
 
     def get_file_content_type(filepath = nil, content_type = nil)
@@ -66,8 +66,7 @@ module MIMEBuilder
       if filename.is_a?(String) && filename.length > 0
         return "attachment; filename=\"#{filename}\""
       end
-      return 'attachment'
+      'attachment'
     end
-
   end
 end
