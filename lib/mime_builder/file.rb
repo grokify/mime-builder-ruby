@@ -41,7 +41,7 @@ module MIMEBuilder
 
     def read_file_bytes(filepath = nil)
       unless File.file?(filepath)
-        raise "File \"#{filepath.to_s}\" does not exist or cannot be read"
+        fail "File \"#{filepath}\" does not exist or cannot be read"
       end
 
       return File.open(filepath, 'rb:BINARY') { |f| f.read }
@@ -56,12 +56,9 @@ module MIMEBuilder
     end
 
     def set_attachment_content_disposition(is_attachment)
-      if is_attachment
-        @mime.headers.set(
-          'Content-Disposition',
-          get_attachment_content_disposition(filepath)
-        )
-      end
+      @mime.headers.set('Content-Disposition', \
+        get_attachment_content_disposition(filepath)) \
+        if is_attachment
     end
 
     def get_attachment_content_disposition(filepath = nil)
