@@ -8,7 +8,6 @@ MIMEBuilder Ruby
 [![Code Climate][codeclimate-status-svg]][codeclimate-status-link]
 [![Scrutinizer Code Quality][scrutinizer-status-svg]][scrutinizer-status-link]
 [![Downloads][downloads-svg]][downloads-link]
-[![Docs][docs-readthedocs-svg]][docs-readthedocs-link]
 [![Docs][docs-rubydoc-svg]][docs-rubydoc-link]
 [![License][license-svg]][license-link]
 

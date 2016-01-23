@@ -8,28 +8,42 @@ module MIMEBuilder
 
     # {:base64_encode bool, :content_type string, :content_id_disable bool}
     def initialize(filepath, opts={})
-      bytes = read_file_bytes(filepath)
 
-      @base64_encode = opts.has_key?(:base64_encode) \
-        ? (opts[:base64_encode] ? true : false) \
-        : false
-
-      if @base64_encode
-        @mime = MIME::Text.new(Base64.encode64(bytes))
-        @mime.headers.set('Content-Transfer-Encoding', 'base64')
+      if opts.has_key?(:base64_encode) && opts[:base64_encode]
+        @base64_encode = true
       else
-        @mime = MIME::Application.new(bytes)
+        @base64_encode = false
       end
+
+      @mime = create_mime(filepath)
 
       if opts.has_key?(:content_id_disable)
         @mime.headers.delete('Content-Id')
       end
 
-      @mime.headers.set('Content-Type', get_file_content_type(filepath, opts[:content_type]))
+      @mime.headers.set(
+        'Content-Type',
+        get_file_content_type(filepath, opts[:content_type])
+      )
 
       if opts.has_key?(:is_attachment) && opts[:is_attachment]
-        @mime.headers.set('Content-Disposition', get_attachment_content_disposition(filepath))
+        @mime.headers.set(
+          'Content-Disposition',
+          get_attachment_content_disposition(filepath)
+        )
       end
+    end
+
+    def create_mime(filepath)
+      bytes = read_file_bytes(filepath)
+
+      if @base64_encode
+        mime = MIME::Text.new(Base64.encode64(bytes))
+        mime.headers.set('Content-Transfer-Encoding', 'base64')
+        return mime
+      end
+
+      return MIME::Application.new(bytes)
     end
 
     def read_file_bytes(filepath=nil)
@@ -46,14 +60,16 @@ module MIMEBuilder
     end
 
     def get_file_content_type(filepath=nil, content_type=nil)
-      return (content_type.is_a?(String) && content_type =~ /^[^\/\s]+\/[^\/\s]+/) \
-        ? content_type : MIME::Types.type_for(filepath).first.content_type \
+      if (content_type.is_a?(String) && content_type =~ /^[^\/\s]+\/[^\/\s]+/)
+        return content_type
+      end
+      return MIME::Types.type_for(filepath).first.content_type \
         || 'application/octet-stream'
     end
 
     def get_attachment_content_disposition(filepath=nil)
       filename = File.basename(filepath.to_s)
-      if filename.is_a?(String) && filename.length>0
+      if filename.is_a?(String) && filename.length > 0
         return "attachment; filename=\"#{filename}\""
       else
         return 'attachment'
