@@ -47,7 +47,7 @@ This will optionally delete the following auto-generated header:
 1. `Content-Id`
 
 ```ruby
-builder = MIMEBuilder::Filepath('/path/to/file')
+builder = MIMEBuilder::Filepath.new '/path/to/file'
 mime_part = builder.mime
 ```
 
@@ -74,14 +74,14 @@ This will optionally delete the following auto-generated header:
 1. `Content-Id`
 
 ```ruby
-builder = MIMEBuilder::Filepath('Hi there!')
+builder = MIMEBuilder::Text.new 'Hi there!' 
 mime_part = builder.mime
 ```
 
 Options:
 
 ```ruby
-builder = MIMEBuilder::Filepath(
+builder = MIMEBuilder::Text.new(
   'Hi there!',
   {
     :content_id_disable => true,   # remove auto-generated Content-Id header

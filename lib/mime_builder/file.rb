@@ -46,7 +46,6 @@ module MIMEBuilder
         fail "File \"#{filepath}\" does not exist or cannot be read"
       end
 
-      #File.open(filepath, 'rb:BINARY') { |f| f.read }
       File.read(filepath)
     end
 
