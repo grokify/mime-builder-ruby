@@ -36,7 +36,7 @@ $ gem install mime_builder
 
 ### From Filepath
 
-Builds a `MIME::Application` or `MIME::Type` object depending on whether base64 encoding is selected. This reads bytes from filesystem and populates the following headers:
+Builds a `MIME::Application` or `MIME::Type` object depending on whether base64 encoding is selected. This reads bytes from filesystem and populates the following MIME headers:
 
 1. `Content-Disposition`
 2. `Content-Transfer-Encoding`
@@ -81,11 +81,7 @@ mime_part = builder.mime
 Options:
 
 ```ruby
-builder = MIMEBuilder::Text.new(
-  'Hi there!',
-  {
-    :content_id_disable => true,   # remove auto-generated Content-Id header
-  }
+builder = MIMEBuilder::Text.new 'Hi there!', :content_id_disable => true
 )
 ```
 
