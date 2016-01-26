@@ -7,7 +7,6 @@ module MIMEBuilder
     attr_accessor :mime
     attr_accessor :filepath
 
-    # {:base64_encode bool, :content_type string, :content_id_disable bool}
     def initialize(filepath, opts = {})
       if opts.key?(:base64_encode) && opts[:base64_encode]
         @base64_encode = true

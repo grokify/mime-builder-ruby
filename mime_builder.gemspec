@@ -6,7 +6,7 @@ version = $1
 Gem::Specification.new do |s|
   s.name        = lib
   s.version     = version
-  s.date        = '2016-01-23'
+  s.date        = '2016-01-25'
   s.summary     = 'MIME Builder is a helper to build MIME parts'
   s.description = 'Helper library to build MIME parts'
   s.authors     = ['John Wang']
