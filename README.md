@@ -82,7 +82,6 @@ Options:
 
 ```ruby
 builder = MIMEBuilder::Text.new 'Hi there!', :content_id_disable => true
-)
 ```
 
 ## Change Log
