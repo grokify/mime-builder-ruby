@@ -1,4 +1,9 @@
 CHANGELOG
 ---------
+- **2016-01-25**: 0.0.2
+  - Improve docs
+  - Add tests
 - **2016-01-23**: 0.0.1
   - Initial release
+  - Add MIME part builder for files given a filepath
+  - Add MIME part builder for text given a string

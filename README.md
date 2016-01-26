@@ -88,6 +88,12 @@ builder = MIMEBuilder::Text.new 'Hi there!', :content_id_disable => true
 
 See [CHANGELOG.md](CHANGELOG.md)
 
+## Links
+
+Project Repo
+
+* https://github.com/grokify/mime-builder-ruby
+
 ## Contributions
 
 Any reports of problems, comments or suggestions are most welcome.
