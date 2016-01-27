@@ -19,7 +19,7 @@ This library creates `mime` parts from limited information.
 
 ### Via Bundler
 
-Add 'mime_builder' to Gemfile and then run `bundle`:
+Add `mime_builder` to Gemfile and then run `bundle`:
 
 ```sh
 $ echo "gem 'mime_builder'" >> Gemfile
