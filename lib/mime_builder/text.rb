@@ -7,7 +7,18 @@ module MIMEBuilder
 
     def initialize(text, opts = {})
       @text = text
-      @mime = MIME::Text.new(text, 'plain')
+
+      if opts.key?(:content_type) && opts[:content_type].to_s.length>0
+        content_type = opts[:content_type]
+        if content_type =~ /^text\/([^\/]+)$/i
+          @mime = MIME::Text.new(text, $1.downcase)
+        else
+          raise "Unknown Content Type: " + opts[:content_type].to_s
+        end
+      else
+        @mime = MIME::Text.new(text, 'plain')
+      end
+
       @mime.headers.delete('Content-Id') \
         if opts.key?(:content_id_disable) && opts[:content_id_disable]
     end

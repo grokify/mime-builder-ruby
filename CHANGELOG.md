@@ -1,5 +1,7 @@
 CHANGELOG
 ---------
+- **2015-05-30**: 0.0.3
+  - Support arbitrary text content types
 - **2016-01-25**: 0.0.2
   - Improve docs
   - Add tests

@@ -56,12 +56,10 @@ Options:
 ```ruby
 builder = MIMEBuilder::Filepath(
   '/path/to/file',
-  {
-    base64_encode: true,        # base64 encode part
-    content_id_disable: true,   # remove auto-generated Content-Id header
-    content_type: 'text/plain', # override auto-generated Content-Type
-    is_attachment: true         # add 'attachment' disposition
-  }
+  base64_encode: true,        # base64 encode part
+  content_id_disable: true,   # remove auto-generated Content-Id header
+  content_type: 'text/plain', # override auto-generated Content-Type
+  is_attachment: true         # add 'attachment' disposition
 )
 ```
 
@@ -81,7 +79,11 @@ mime_part = builder.mime
 Options:
 
 ```ruby
-builder = MIMEBuilder::Text.new 'Hi there!', content_id_disable: true
+builder = MIMEBuilder::Text(
+  'Hi there!',
+  content_id_disable: true, # remove auto-generated Content-Id header
+  content_type: 'text/html' # override auto-generated Content-Type
+)
 ```
 
 ## Change Log
