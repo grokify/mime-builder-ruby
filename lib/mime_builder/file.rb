@@ -65,10 +65,9 @@ module MIMEBuilder
 
     def get_attachment_content_disposition(filepath = nil)
       filename = File.basename(filepath.to_s)
-      if filename.is_a?(String) && filename.length > 0
-        return "attachment; filename=\"#{filename}\""
-      end
-      'attachment'
+      cd = filename.to_s.length > 0              \
+        ? "attachment; filename=\"#{filename}\"" \
+        : 'attachment'
     end
   end
 end

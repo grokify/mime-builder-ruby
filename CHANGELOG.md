@@ -1,7 +1,8 @@
 CHANGELOG
 ---------
 - **2015-05-30**: 0.0.3
-  - Support arbitrary text content types
+  - Add Text support for arbitrary content types
+  - Add Text support for content disposition
 - **2016-01-25**: 0.0.2
   - Improve docs
   - Add tests

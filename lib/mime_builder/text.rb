@@ -21,6 +21,21 @@ module MIMEBuilder
 
       @mime.headers.delete('Content-Id') \
         if opts.key?(:content_id_disable) && opts[:content_id_disable]
+
+      set_attachment_content_disposition(opts[:filename], opts[:is_attachment])
+    end
+
+    def set_attachment_content_disposition(filename, is_attachment)
+      @mime.headers.set(
+        'Content-Disposition',
+        get_attachment_content_disposition(filename)
+      ) if is_attachment
+    end
+
+    def get_attachment_content_disposition(filename = nil)
+      cd = filename.to_s.length > 0              \
+        ? "attachment; filename=\"#{filename}\"" \
+        : 'attachment'
     end
   end
 end
