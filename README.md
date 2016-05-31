@@ -13,7 +13,7 @@ MIMEBuilder Ruby
 
 ## Overview
 
-This library creates `mime` parts from limited information.
+This library creates MIME parts from limited information. The MIME parts are based on the Ruby `mime` library and are all sub-classes of `MIME::Media`.
 
 ## Installation
 
@@ -95,6 +95,11 @@ See [CHANGELOG.md](CHANGELOG.md)
 Project Repo
 
 * https://github.com/grokify/mime-builder-ruby
+
+MIME Library
+
+* https://rubygems.org/gems/mime
+* https://bitbucket.org/pachl/mime/src
 
 ## Contributions
 
