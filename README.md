@@ -65,7 +65,10 @@ builder = MIMEBuilder::Filepath(
 
 ### From String
 
-Builds a `MIME::Text` object.
+Builds a `MIME::Text` object. This accepts a string and can optionally populate the following headers:
+
+1. `Content-Disposition`
+2. `Content-Type`
 
 This will optionally delete the following auto-generated header:
 
