@@ -1,6 +1,7 @@
 require './test/test_base.rb'
 
 require 'base64'
+require 'multi_json'
 
 class MIMEBuilderJsonTest < Test::Unit::TestCase
   def test_base
