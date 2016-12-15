@@ -111,6 +111,7 @@ builder = MIMEBuilder::JSON.new(
   content_id_disable: true, # remove auto-generated Content-Id header
   base64_encode: false      # disable default base64 encoding
 )
+```
 
 ## Change Log
 
