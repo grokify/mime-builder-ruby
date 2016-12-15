@@ -136,7 +136,7 @@ Please report these on [Github](https://github.com/grokify/mime-builder-ruby)
 
 ## License
 
-MIMEBuilder is available under an MIT-style license. See [LICENSE.txt](LICENSE.txt) for details.
+MIMEBuilder is available under an MIT-style license. See [LICENSE.md](LICENSE.md) for details.
 
 MIMEBuilder &copy; 2016 by John Wang
 
@@ -157,4 +157,4 @@ MIMEBuilder &copy; 2016 by John Wang
  [docs-rubydoc-svg]: https://img.shields.io/badge/docs-rubydoc-blue.svg
  [docs-rubydoc-link]: http://www.rubydoc.info/gems/mime_builder/
  [license-svg]: https://img.shields.io/badge/license-MIT-blue.svg
- [license-link]: https://github.com/grokify/mime-builder-ruby/blob/master/LICENSE.txt
+ [license-link]: https://github.com/grokify/mime-builder-ruby/blob/master/LICENSE.md
