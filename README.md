@@ -107,7 +107,7 @@ Options:
 
 ```ruby
 builder = MIMEBuilder::JSON.new(
-  'Hi there!',
+  { foo: 'bar' },
   content_id_disable: true, # remove auto-generated Content-Id header
   base64_encode: false      # disable default base64 encoding
 )
