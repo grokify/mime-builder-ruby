@@ -1,6 +1,6 @@
 CHANGELOG
 ---------
-- **2015-12-14**: 0.0.4
+- **2016-12-14**: 0.0.4
   - Add JSON support
 - **2015-05-30**: 0.0.3
   - Add Text support for arbitrary content types
