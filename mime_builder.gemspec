@@ -16,6 +16,6 @@ Gem::Specification.new do |s|
   s.files       = Dir['lib/**/**/*'] + Dir['[A-Z]*'] + Dir['test/**/*']
   # s.files.reject! { |fn| fn.include? "CVS" }
   # s.required_ruby_version = '>= 1.8.7' # 1.8.7+ is tested
-  s.add_dependency 'mime', '>= 0'
-  s.add_dependency 'mime-types', '>= 1.25' # >= 1.9 '~> 2.5', '>= 2.5'
+  s.add_dependency 'mime', '~> 0'
+  s.add_dependency 'mime-types', '~> 1.25' # >= 1.9 '~> 2.5', '>= 2.5'
 end

@@ -54,7 +54,7 @@ mime_part = builder.mime
 Options:
 
 ```ruby
-builder = MIMEBuilder::Filepath(
+builder = MIMEBuilder::Filepath.new(
   '/path/to/file',
   base64_encode: true,        # base64 encode part
   content_id_disable: true,   # remove auto-generated Content-Id header
@@ -82,12 +82,35 @@ mime_part = builder.mime
 Options:
 
 ```ruby
-builder = MIMEBuilder::Text(
+builder = MIMEBuilder::Text.new(
   'Hi there!',
   content_id_disable: true, # remove auto-generated Content-Id header
   content_type: 'text/html' # override auto-generated Content-Type
 )
 ```
+
+### From JSON
+
+Builds a `MIME::Text` object. This accepts a string, hash, or array.
+
+This will optionally:
+
+1. delete the following auto-generated `Content-Id`
+1. base64 encode the content
+
+```ruby
+builder = MIMEBuilder::JSON.new { foo: 'bar' }
+mime_part = builder.mime
+```
+
+Options:
+
+```ruby
+builder = MIMEBuilder::JSON.new(
+  'Hi there!',
+  content_id_disable: true, # remove auto-generated Content-Id header
+  base64_encode: false      # disable default base64 encoding
+)
 
 ## Change Log
 

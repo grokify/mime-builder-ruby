@@ -21,8 +21,8 @@ class MIMEBuilderFileTest < Test::Unit::TestCase
   end
 
   def test_base64
-    filepath = './test/test_file.pdf'
     filename = 'test_file.pdf'
+    filepath = File.join './test', filename
 
     filepart = MIMEBuilder::Filepath.new(filepath, {:base64_encode => true})
 
@@ -47,8 +47,8 @@ class MIMEBuilderFileTest < Test::Unit::TestCase
   end
 
   def test_attachment
-    filepath = './test/test_file.pdf'
     filename = 'test_file.pdf'
+    filepath = File.join './test', filename
 
     filepart = MIMEBuilder::Filepath.new(filepath, {:is_attachment => true})
 
@@ -59,7 +59,7 @@ class MIMEBuilderFileTest < Test::Unit::TestCase
     filepath = './test/test_file_nonexistent.pdf'
 
     assert_raise do
-      filepart = MIMEBuilder::Filepath.new(filepath)
+      MIMEBuilder::Filepath.new(filepath)
     end
   end
 end
