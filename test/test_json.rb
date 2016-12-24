@@ -22,4 +22,13 @@ class MIMEBuilderJsonTest < Test::Unit::TestCase
 
     assert_equal test_json, json_part.mime.body.to_s
   end
+
+  def test_base64_raw
+    info = { hello: 'world' }
+
+    builder = MIMEBuilder::JSON.new info, encode_base64: true
+
+    assert_equal 'eyJoZWxsbyI6IndvcmxkIn0='.encode('iso-8859-1'), builder.mime.body.to_s.strip
+    assert_equal true, builder.encode_base64?
+  end
 end

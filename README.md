@@ -3,6 +3,7 @@ MIMEBuilder Ruby
 
 [![Gem Version][gem-version-svg]][gem-version-link]
 [![Build Status][build-status-svg]][build-status-link]
+[![Codacy Badge][codacy-svg]][codacy-link]
 [![Coverage Status][coverage-status-svg]][coverage-status-link]
 [![Dependency Status][dependency-status-svg]][dependency-status-link]
 [![Code Climate][codeclimate-status-svg]][codeclimate-status-link]
@@ -146,6 +147,8 @@ MIMEBuilder &copy; 2016 by John Wang
  [downloads-link]: https://rubygems.org/gems/mime_builder
  [build-status-svg]: https://api.travis-ci.org/grokify/mime-builder-ruby.svg?branch=master
  [build-status-link]: https://travis-ci.org/grokify/mime-builder-ruby
+ [codacy-svg]: https://api.codacy.com/project/badge/Grade/fa30d602e8ec4eae806bb43430989d65
+ [codacy-link]: https://www.codacy.com/app/grokify/mime-builder-ruby
  [coverage-status-svg]: https://coveralls.io/repos/grokify/mime-builder-ruby/badge.svg?branch=master
  [coverage-status-link]: https://coveralls.io/r/grokify/mime-builder-ruby?branch=master
  [dependency-status-svg]: https://gemnasium.com/grokify/mime-builder-ruby.svg
