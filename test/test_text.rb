@@ -2,9 +2,9 @@ require './test/test_base.rb'
 
 class MIMEBuilderTextTest < Test::Unit::TestCase
   def test_contenttype
-  	test_text = 'Hello world!'
+    test_text = 'Hello world!'
 
-    filepart = MIMEBuilder::Text.new(test_text)
+    filepart = MIMEBuilder::Text.new test_text
 
     assert_equal 'text/plain', filepart.mime.headers.get('Content-Type')
 

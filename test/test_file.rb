@@ -1,11 +1,6 @@
 require './test/test_base.rb'
 
 class MIMEBuilderFileTest < Test::Unit::TestCase
-
-  def test_file_one
-    #assert_equal "bXlfYXBwX2tleTpteV9hcHBfc2VjcmV0", @rcsdk.send(:get_api_key)
-  end
-
   def test_basic
     filepath = './test/test_file.pdf'
     filename = 'test_file.pdf'

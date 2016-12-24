@@ -33,9 +33,10 @@ module MIMEBuilder
     end
 
     def get_attachment_content_disposition(filename = nil)
-      return filename.to_s.length > 0              \
-        ? "attachment; filename=\"#{filename}\"" \
-        : 'attachment'
+      if filename.to_s.length > 0
+        return "attachment; filename=\"#{filename}\""
+      end
+      'attachment'
     end
   end
 end
