@@ -1,6 +1,8 @@
 MIMEBuilder Ruby
 ================
 
+[![Codacy Badge](https://api.codacy.com/project/badge/Grade/fa30d602e8ec4eae806bb43430989d65)](https://www.codacy.com/app/grokify/mime-builder-ruby?utm_source=github.com&utm_medium=referral&utm_content=grokify/mime-builder-ruby&utm_campaign=badger)
+
 [![Gem Version][gem-version-svg]][gem-version-link]
 [![Build Status][build-status-svg]][build-status-link]
 [![Coverage Status][coverage-status-svg]][coverage-status-link]
