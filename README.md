@@ -2,7 +2,7 @@ MIMEBuilder Ruby
 ================
 
 [![Gem Version][gem-version-svg]][gem-version-link]
-[![Build Status][build-status-svg]][build-status-link]
+[![Build Status][build-status-svg]][build-status-url]
 [![Coverage Status][coverage-status-svg]][coverage-status-link]
 [![Code Climate][codeclimate-status-svg]][codeclimate-status-link]
 [![Scrutinizer Code Quality][scrutinizer-status-svg]][scrutinizer-status-link]
@@ -144,8 +144,8 @@ MIMEBuilder &copy; 2016 by John Wang
  [gem-version-link]: http://badge.fury.io/rb/mime_builder
  [downloads-svg]: http://ruby-gem-downloads-badge.herokuapp.com/mime_builder
  [downloads-link]: https://rubygems.org/gems/mime_builder
- [build-status-svg]: https://api.travis-ci.org/grokify/mime-builder-ruby.svg?branch=master
- [build-status-link]: https://travis-ci.org/grokify/mime-builder-ruby
+ [build-status-svg]: https://github.com/grokify/mime-builder-ruby/workflows/ruby%20build/badge.svg?branch=master
+ [build-status-url]: https://github.com/grokify/mime-builder-ruby/actions
  [codacy-svg]: https://api.codacy.com/project/badge/Grade/fa30d602e8ec4eae806bb43430989d65
  [codacy-link]: https://www.codacy.com/app/grokify/mime-builder-ruby
  [coverage-status-svg]: https://coveralls.io/repos/grokify/mime-builder-ruby/badge.svg?branch=master
