@@ -11,7 +11,7 @@ Gem::Specification.new do |s|
   s.description = 'Helper library to build MIME parts'
   s.authors     = ['John Wang']
   s.email       = 'johncwang@gmail.com'
-  s.homepage    = 'https://github.com/grokify/'
+  s.homepage    = 'https://github.com/grokify/mime-builder-ruby'
   s.licenses    = ['MIT']
   s.files       = Dir['lib/**/**/*'] + Dir['[A-Z]*'] + Dir['test/**/*']
   # s.files.reject! { |fn| fn.include? "CVS" }
