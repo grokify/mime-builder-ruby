@@ -7,7 +7,6 @@ MIMEBuilder Ruby
 [![Code Climate][codeclimate-status-svg]][codeclimate-status-link]
 [![Scrutinizer Code Quality][scrutinizer-status-svg]][scrutinizer-status-link]
 
-[![Downloads][downloads-svg]][downloads-link]
 [![Docs][docs-rubydoc-svg]][docs-rubydoc-link]
 [![License][license-svg]][license-link]
 
@@ -138,7 +137,7 @@ Please report these on [Github](https://github.com/grokify/mime-builder-ruby)
 
 MIMEBuilder is available under an MIT-style license. See [LICENSE.md](LICENSE.md) for details.
 
-MIMEBuilder &copy; 2016 by John Wang
+MIMEBuilder &copy; 2016-2023 by John Wang
 
  [gem-version-svg]: https://badge.fury.io/rb/mime_builder.svg
  [gem-version-link]: http://badge.fury.io/rb/mime_builder
